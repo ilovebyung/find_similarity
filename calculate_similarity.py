@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from skimage.metrics import structural_similarity as ssim
 
-def calculate_image_similarity(template_path, new_image_path):
+def calculate_image_similarity(new_image_path, template_path):
     # Read the images
     img1 = cv2.imread(template_path)
     img2 = cv2.imread(new_image_path)
@@ -35,8 +35,8 @@ for file in files:
   if file.endswith('jpg'):
     images.append(file)
 
-image_1 = images[0]
-image_2 = images[2]
+image_1 = 'sample.jpg'
+image_2 = 'template.jpg'
 
 similarity_score = calculate_image_similarity(image_1, image_2)
 
@@ -79,7 +79,7 @@ def compare_images(template_path, new_image_path):
 
 # Example usage
 template_path = "template.jpg"
-new_image_path = "new_image.jpg"
+new_image_path = "aligned.jpg"
 
 score = compare_images(template_path, new_image_path)
 print("Similarity score:", score)
