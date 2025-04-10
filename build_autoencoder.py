@@ -79,6 +79,16 @@ output = autoencoder_reload(sample_input)
 print("Input shape:", sample_input.shape)
 print("Output shape:", output.shape)
 
+resized_tensor = output.squeeze()
+image_np = resized_tensor.detach().numpy()
+
+import matplotlib.pyplot as plt
+plt.imshow(image_np, cmap='gray')
+plt.show()
+
+
+
+
 # Mean Absolute Error (MAE): This calculates the average absolute difference between the input and output.
 
 reconstruction_error = torch.mean(torch.abs(output_image - input_image))
