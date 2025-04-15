@@ -59,6 +59,7 @@ l10n/
 *.PNG
 # deeplearning
 *.pt
+*.pth
 sandbox*
 
 
